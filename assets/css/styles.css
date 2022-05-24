@@ -6,6 +6,10 @@
   height: 8em;
 }
 
+.voorstelling>li {
+  color: coral;
+}
+
 html {
   font-size: 100%;
 }
@@ -124,7 +128,7 @@ body {
 
 *****************************************************************************************/
 .nav-side {
-  font-size: 24px;
+  font-size: 20px;
   font-size: 1.5rem;
   font-weight: 300;
   margin-top: -0.37em;
@@ -132,14 +136,14 @@ body {
 .nav-side > li > a {
   padding-top: 5px;
   padding-bottom: 5px;
-  color: #f392b4;
+  color: coral;
 }
 .nav-side > li > a:hover {
-  color: #bd1550;
+  color: lightcoral;
   background: none;
 }
 .nav-side > li.active > a {
-  color: #bd1550;
+  color: coral;
 }
 /*********************************************************************
 
