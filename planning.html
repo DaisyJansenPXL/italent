@@ -5,13 +5,13 @@
 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 
-	<title>iTalent - Daisy Jansen</title>
+	<title>Planning | iTalent - Daisy Jansen</title>
 
 	<link rel="shortcut icon" href="assets/images/logo_pxl_bol.png">
 	
 	<!-- Bootstrap -->
 	<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
-	<!-- Icons -->
+	<!-- Icon font -->
 	<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 	<!-- Fonts -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
@@ -20,13 +20,13 @@
 
 	<!--[if lt IE 9]> <script src="assets/js/html5shiv.js"></script> <![endif]-->
 </head>
-<body class="home">
+<body>
 
 <header id="header">
 	<div id="head" class="parallax" parallax-speed="2">
 		<h1 id="logo" class="text-center">
 			<img class="img-circle" src="assets/images/image-2021-03-24-133826.jpeg" alt="">
-			<span class="title">Portfolio</span>
+			<span class="title">Voorstelling</span>
 			<span class="tagline">iTalent<br>
 				<a href="">Daisy Jansen</a></span>
 		</h1>
@@ -34,13 +34,13 @@
 
 	<nav class="navbar navbar-default navbar-sticky">
 		<div class="container-fluid">
-			
+
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
 			</div>
-			
+
 			<div class="navbar-collapse collapse">
-				
+
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="index.html">Home</a></li>
 					<li><a href="voorstelling.html">Voorstelling</a></li>
@@ -55,70 +55,74 @@
 					</li>
 					<li><a href="blog.html">Eindreflectie</a></li>
 				</ul>
-			
-			</div><!--/.nav-collapse -->			
-		</div>	
+
+			</div><!--/.nav-collapse -->
+		</div>
 	</nav>
 </header>
 
 <main id="main">
 
 	<div class="container">
-		
-		<div class="row section topspace">
-			<div class="col-md-12">
-				<p class="lead text-center text-muted">Mijn activiteiten voor het vak iTalent, gegoten in een portfolio met X-Factor ;-)</p>
-			</div>
-		</div> <!-- / section -->
-		
-		<div class="row section featured topspace">
-			<h2 class="section-title"><span>Activiteiten</span></h2>
-			<div class="row">
-				<div class="col-sm-6 col-md-3">
-					<h3 class="text-center">API-Design</h3>
-					<p class="height-services-fixed">Aan de hand van raml-bestanden werden API-contracten opgesteld die vervolgens gebruikt worden in het Mule-project.</p>
-					<p class="text-center"><a href="" class="btn btn-action">Lees meer</a></p>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<h3 class="text-center">Mule-project</h3>
-					<p class="height-services-fixed">Verschillende API's worden op elkaar afgestemd, om data te kunnen uitwisselen (a.d.h.v. business logica) en applicaties van deze data te voorzien.</p>
-					<p class="text-center"><a href="" class="btn btn-action">Lees meer</a></p>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<h3 class="text-center">MUnit</h3>
-					<p class="height-services-fixed">Meten is weten. Met deze insteek werd het testing-framework MUnit gebruikt om de code van de API's te testen .</p>
-					<p class="text-center"><a href="" class="btn btn-action">Lees meer</a></p>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<h3 class="text-center">Extra's</h3>
-					<p class="height-services-fixed">Tijdens het werken aan het portfolio zijn er nog enkele nieuwe zaken en technologieën aangeraakt geweest die het vermelden waard zijn.</p>
-					<p class="text-center"><a href="" class="btn btn-action">Lees meer</a></p>
-				</div>
-			</div>
-		</div> <!-- / section -->
 
+		<div class="row topspace">
+			
+			<!-- Sidebar -->
+			<aside class="col-sm-4 sidebar sidebar-right">
 
-		<div class="row section topspace call-to-action">
-			<div class="panel panel-cta"><div class="panel-body">
-				<div class="col-lg-8">
-					<p>Benieuwd naar wat ik nog meer heb bereikt op professioneel vlak?<br/>
-					Neem eens een kijkje op mijn LinkedIn en stuur gerust een connectieverzoek!</p>
-				</div>
-				<div class="col-lg-4 text-right">
-					<a href="https://www.linkedin.com/in/daisy-jansen-7117b212a/" class="btn btn-primary btn-lg">Bezoek profiel</a>
-				</div>
-			</div></div>
-		</div> <!-- /section -->
+				<ul class="nav text-center nav-side voorstelling">
+					<li>Welke?</li>
+					<li>Waarom?</li>
+					<li>Wanneer?</li>
+				</ul>
 
+			</aside>
+			<!-- /Sidebar -->
 
+			<!-- Article main content -->
+			<article class="col-sm-8 maincontent">
+				<h3 id="wie">Welke activiteiten ga ik uitvoeren?</h3>
+				<p> De overkoepelende activiteit die ik gekozen heb, is een Mule-applicatie. Ik begin met een cursus te volgen en ga nadien over tot de uitwerking. Binnen deze applicatie maak ik gebruik van:</p>
+				<ul>
+					<li>Raml-bestanden voor de API</li>
+					<li>DataWeave, de taal binnen Mulesoft, om transformaties op data uit te voeren</li>
+					<li>M-Unit om de API's te testen</li>
+				</ul>
+				<p>Om effectief met data te gaan werken, heb ik ook een formulier in React gemaakt.</p>
+				<p>Verder werden er nog kleine extra's toegevoegd doorheen heel het project:</p>
+				<ul>
+					<li>SMTP-provider van Google</li>
+					<li>Een externe API wordt aangesproken</li>
+					<li>stgreSQL-databanken in Docker-containers</li>
+					<li>Portainer om de Docker-containers visueel weer te kunnen geven</li>
+					<li>GitHub Pages om deze website te hosten</li>
+					<li>Bootstrap in deze website</li>
+				</ul>
+				<h3>Waarom ga ik deze activiteiten uitvoeren?</h3>
+				<p>
+					Momenteel ben ik aan het werk als backend-developer en heb ik ook al een beetje ervaring met frontend-technieken van mijn vorige job.
+					Daarom wilde ik het eens op een andere manier aanpakken. Ik wilde geen plug-and-play-aanpak, maar ik wilde effectief iets maken en uitdenken.
+					Mulesoft, en integratie in het algemeen, is iets wat ik steeds vaker zie opkomen en het leek mij leuk om mij daar wat verder in te verdiepen en al
+					eens kennis mee te maken, zodat dat mijn CV ook weer mooi aanvult.
+				</p>
+				<h3>Wanneer ga ik deze activiteiten uitvoeren?</h3>
+				<p>
+					Deze activiteiten voer ik uit tijdens het derde trimester van het derde jaar.
+					Tijdens de weekenden houd ik mij telkens een aantal uur bezig, om eens af te kunnen wisselen van stage en het onderzoek.
+				</p>
+			</article>
+			<!-- /Article -->
+			
+
+		</div>
 	</div>	<!-- /container -->
-
+	
 </main>
 
 <footer id="underfooter">
 	<div class="container">
 		<div class="row">
-			
+
 			<div class="col-md-6 widget">
 				<div class="widget-body">
 					<p></p>
