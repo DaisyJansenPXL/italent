@@ -23,6 +23,13 @@ body {
 .topspace {
   margin-top: 40px;
 }
+
+.fullscreen-img { cursor:zoom-in; }
+.fullscreen-img:-webkit-full-screen { cursor:zoom-out; }
+.fullscreen-img:-moz-full-screen { cursor:zoom-out; }
+.fullscreen-img:-ms-fullscreen { cursor:zoom-out; }
+.fullscreen-img:fullscreen { cursor:zoom-out; }
+
 /*********************************************************************
 
 
