@@ -210,10 +210,10 @@ h5 {
   font-size: 1.25rem;
 }
 a {
-  color: #bd1550;
+  color: coral;
 }
 a:hover {
-  color: #e93675;
+  color: lightcoral;
 }
 .lead {
   font-weight: 300;
