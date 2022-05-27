@@ -86,7 +86,6 @@
 				<div class="row widget">
 					<div class="col-xs-12">
 						<h4>Architectuur Mule-project</h4>
-						<div style="padding:54.17% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/714404300?h=a4b7896e5b&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Gemeente wijzer - Google Chrome 2022-05-26 22-05-37"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 						<img id="2" class="fullscreen-img" src="assets/images/iTalent_Architectuur.jpg" alt="Architectuur" onclick="toggleFullscreen(this)">
 						<p>Resultaten Mule-cursus</p>
 					</div>
@@ -114,6 +113,49 @@
 						</div>
 					</div>
 
+					<div class="row widget">
+						<div class="col-xs-12">
+							<h4>AnyPoint Studio</h4>
+							<img id="6" class="fullscreen-img" src="assets/images/towns-xapi-tm.png" alt="Towns-xapi tranform message" onclick="toggleFullscreen(this)">
+							<p>Towns-xapi tranform message</p>
+						</div>
+					</div>
+
+					<div class="row widget">
+						<div class="col-xs-12">
+							<img id="7" class="fullscreen-img" src="assets/images/towns-xapi-request.png" alt="Towns-xapi request" onclick="toggleFullscreen(this)">
+							<p>Towns-xapi request</p>
+						</div>
+					</div>
+
+					<div class="row widget">
+						<div class="col-xs-12">
+							<img id="8" class="fullscreen-img" src="assets/images/towns-papi.png" alt="Towns-papi flow" onclick="toggleFullscreen(this)">
+							<p>Towns-papi flow</p>
+						</div>
+					</div>
+
+					<div class="row widget">
+						<div class="col-xs-12">
+							<img id="9" class="fullscreen-img" src="assets/images/towns-sapi-request-db.png" alt="Towns-sapi request db" onclick="toggleFullscreen(this)">
+							<p>Towns-sapi request database</p>
+						</div>
+					</div>
+
+					<div class="row widget">
+						<div class="col-xs-12">
+							<img id="10" class="fullscreen-img" src="assets/images/ev-sapi-flow.png" alt="Ev-sapi flow" onclick="toggleFullscreen(this)">
+							<p>Ev-sapi flow</p>
+						</div>
+					</div>
+
+					<div class="row widget">
+						<div class="col-xs-12">
+							<img id="11" class="fullscreen-img" src="assets/images/smtp-sapi-send-mail.png" alt="SMTP-sapi e-mail verzenden" onclick="toggleFullscreen(this)">
+							<p>Smtp-sapi e-mail verzenden</p>
+						</div>
+					</div>
+
 			</div>
 
 			</aside>			<!-- /Sidebar -->
@@ -126,9 +168,7 @@
 					naar de Mule-applicatie en gaat gegevens teruggeven die afkomstig zijn van andere api's. Via de
 					resultaten-pagina krijgen we de gemeenten te zien, via mail krijgen we nog extra informatie toegestuurd
 					via een CSV-bestand.</p>
-					<video width="100%" controls>
-						<source src="assets/videos/Gemeente%20wijzer%20-%20Google%20Chrome%202022-05-26%2022-05-37.mp4">
-					</video>
+					<div style="padding:54.17% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/714404300?h=a4b7896e5b&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Gemeente wijzer - Google Chrome 2022-05-26 22-05-37"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 				</header>
 				<h2>Cursus</h2>
 				<p>
@@ -237,9 +277,136 @@
 				</div>
 				<div id="dataweave">
 					<h2>Mule</h2>
-					<p></p>
+					<p>
+						Bij een Mule-applicatie zijn er drie lagen: de experience-laag, de process-laag en de system-laag.
+						Ik ben van boven (experience) naar onder (system) beginnen werken omdat dit voor mij het
+						makkelijkste was.
+					</p>
+					<p>
+						Ik begon met de towns-xapi. Deze api zal de gegevens van het formulier binnenkrijgen, de data
+						omvormen en vervolgens een request doorsturen naar de towns-papi. De data omvormen, of mappen,
+						is iets dat heel veel voorkomt binnen integratieprojecten, omdat er met verschillende API’s
+						gewerkt worden en deze allemaal op elkaar afgestemd moeten zijn. Indien er bijvoorbeeld een API
+						wijzigt, moet niet de hele flow aangepast worden van alle API’s, meer enkel de API die de data
+						zal mappen. Dit werkt heel productief.
+					</p>
+					<p>
+						Ik ben begonnen met een transform message toe te voegen, die de payload moet omvormen. Dat
+						omvormen gebeurt met DataWeave. Omdat de omvorming goed moet gebeuren en er geen fouten in mogen
+						sluipen, heb ik gewerkt met de <a href="https://developer.mulesoft.com/learn/dataweave/" target="_blank">
+						DataWeave Playground</a>. Dit is een online platform waar je je input kan ingeven, vervolgens je
+						script in DataWeave uitschrijven en kijken wat je als output krijgt. Deze tool heb ik enorm veel
+						gebruikt. Vervolgens heb ik een request toegevoegd die met de gemapte data de volgende api gaan
+						aanspreken, namelijk de towns-papi.
+					</p>
+					<p>
+						Bij het aanmaken van de towns-papi heb ik ook gevonden hoe ik de host en de port moet instellen
+						van de api, dus dat heb ik ook even in orde gemaakt bij de towns-xapi. De towns-papi is de
+						grootste API, omdat hier het meeste logica in zit. De payload die binnenkwam heb ik opgevangen
+						en verschillende zaken opgeslagen in variabelen. Binnen Mule-applicaties wordt gewerkt met flows,
+						en binnen de towns-papi werk ik met verschillende requesten, die niet allemaal gegevens nodig
+						hebben van het voorgaande in de flow. Dat was even aanpassen van werken, dat dit allemaal op
+						elkaar opvolgde en ik bepaalde data dus kwijt was na een request indien ik dat niet had
+						opgeslagen in een variabele. In de towns-papi doe ik een request naar de towns-sapi, voor elke
+						town die ik daaruit terugkreeg deed ik een request naar de ev-sapi, en op het einde deed ik een
+						request naar de smtp-sapi indien er in het formulier aangeduid werd dat ze een mail wensten te
+						ontvangen. De towns-papi geeft een respons terug aan de towns-xapi, namelijk de namen van de
+						gemeenten die zij heeft teruggekregen van de towns-sapi.
+					</p>
+					<p>
+						Dit zijn zaken die niet direct getest kunnen worden, omdat bijvoorbeeld de towns-sapi nog niet
+						bestaat. In de bedrijfswereld valt het ook al eens voor dat de contracten al uitgeschreven zijn
+						van een externe API, maar dat ze die nog aan het ontwikkelen zijn. Daarom zijn die specificaties
+						en die contracten zo belangrijk om te behandelen als basis en daar op verder te werken, en dat
+						daar dan aan vastgehouden wordt. Het is ook mogelijk om als integratieontwikkelaar zo een
+						externe API voor andere developers te moeten ontwikkelen, en dan moet er ook vastgehouden worden
+						aan die specificaties.
+					</p>
+					<p>
+						Dan de process-laag, moet de system-laag ontwikkeld worden. Dit zijn de API’s die in contact
+						staan met externe API’s, databases…
+					</p>
+					<p>
+						De towns-sapi en de ev-sapi waren relatief simpel nadat de towns-papi ontwikkeld waren. Bij de
+						towns-sapi wordt een request gedaan naar een database, en die data wordt dan gemapt en
+						teruggegeven. Bij de towns-sapi wordt een request gedaan naar de externe API met de naam van de
+						gemeente die wordt meegegeven, en de request stuurt de coördinaten terug. Deze coördinaten
+						werden vervolgens gebruikt om gegevens uit de EV-database te halen, te mappen en terug te geven.
+					</p>
+					<p>
+						De smtp-sapi is een API die ervoor zou moeten zorgen dat er effectief een e-mail uitgestuurd kon
+						worden via Gmail. Eerst moest de binnenkomende data omgevormd worden tot een CSV-formaat (om mee
+						te kunnen geven als bijlage aan de e-mail), dan werd de e-mail verzonden en uiteindelijk werd er
+						nog een tranform message aan de flow toegevoegd om een response terug te kunnen geven dat het
+						versturen van de e-mail gelukt is.
+					</p>
+					<p>
+						Vervolgens heb ik alle API’s tegelijk opgestart en kreeg ik inderdaad informatie terug via de
+						esultatenpagina van het formulier.
+					</p>
 					<h3>Reflectie</h3>
-					<p></p>
+					<p>
+						Tijdens het ontwikkelen van de verschillende API’s ben ik tegen verschillende problemen
+						aangelopen. Een daarvan ligt aan de IDE Anypoint Studio zelf. Wanneer er iets gewijzigd is, moet
+						direct uit het element geklikt worden, gevolgd door ctrl + s, want anders zit de kans er in dat
+						de wijzigingen niet opgeslagen zijn. Dit heb ik enkele keren meegemaakt, wat best frustrerend is.
+					</p>
+					<p>
+						Ook het verzenden van de e-mail verliep niet vlekkeloos. Na opzoekingswerk op Google bleken
+						meerdere mensen daar problemen mee te hebben, en hebben ze een extra regel code in de XML van de
+						flow moeten toevoegen. Ook bij mij was daar het probleem mee opgelost.
+					</p>
+					<p>
+						Ik wilde ook heel graag de applicatie hosten via AnyPoint Platform, maar omdat ik met een
+						trial-account aan het werken was, zou dat na enkele weken weer afgesloten worden. Voor alle
+						veiligheid heb dit dus lokaal gelaten, zodat ik zeker was dat het werkte.
+					</p>
+					<p>
+						De API’s opstarten, het formulier invullen een response terugkrijgen verliep ook niet volledig
+						zonder problemen. Ik liep namelijk in de frontend tegen een CORS-probleem aan. Dit is een
+						probleem dat wel vaker voorvalt tussen frontend- en backend-applicaties. Cross-Origin Resource
+						Sharing is een protocol dat toestemming geeft om van een domein toegang te krijgen tot een ander
+						domein. Hier heb ik vrij veel tijd aan verloren, omdat ik niet goed wist hoe ik dit moest
+						oplossen in de Mule-applicatie. Uiteindelijk heb ik na lang zoeken op Google gevonden dat ik in
+						de towns-xapi (de API die direct in contact staat met de client) bij de HTTP Listener config een
+						http:public-resource moest toevoegen. Hierna was dat probleem ook opgelost.
+					</p>
+					<p>
+						Ik moet toegeven dat ik in het begin niet helemaal overtuigd was van Mulesoft, omdat het vrij
+						low-code is. Ook de flows zijn drag-and-drop, waardoor het allemaal “simpel” oogt, met de nadruk
+						op ‘oogt’. Er zit namelijk heel wat configuratie en denkwerk achter om alles op elkaar afgestemd
+						te krijgen. Dit is zeer anders dan frontend- of backend-werk en ik vond het zeker eens aangenaam
+						om gedaan te hebben. Het is een hele andere manier van werken. Ik denk zeker dat hier nog wel
+						toekomst in zit, zeker omdat microservices meer en meer beginnen opkomen. Wat ik wel heb gemerkt
+						aan alles binnen Mulesoft, is dat het vrij prijzig is. Bedrijven moeten best een grote som
+						neerleggen om de software te betalen, en dan zijn de developers er nog niet mee betaald.
+					</p>
+					<p>
+						Ik heb enorm veel geleerd van dit project, vooral in termen van architectuur en hoe alles in
+						verbinding staat met alles. Flows, endpoints, contracten… Het zijn zaken waar ik eerder nooit zo
+						direct bij heb stilgestaan.
+					</p>
+					<p>
+						Mijn sterke punten zijn dat ik vrij snel met het flow-principe weg was. Het was even zoeken in
+						het begin, maar ik leg vrij snel linken qua logica op enkele problemen na. Mijn grote zwakke
+						punten tijdens dit project zijn dat ik mijn oriëntatie regelmatig kwijtgeraakte en ook niet goed
+						letterlijk kan onthouden. Ik moest dus constant mijn API-specificaties openhouden en de
+						architectuurtekening om mij opnieuw te kunnen oriënteren.
+					</p>
+					<p>
+						De grote link met de opleiding van PXL is microservices. Microservices zijn wel vaker
+						teruggekomen in de opleiding en worden steeds belangrijker geacht, maar het is eigenlijk ook
+						best interessant om deze technologie eens te bekijken. Ik snap dat het niet mogelijk is om hier
+						een vak over op te richten, maar er zijn misschien bedrijven die eens een seminarie hierover
+						willen geven? Wat het dan weer interessant maakt voor de reguliere studenten die seminaries
+						moeten volgen voor iTalent ;-).
+					</p>
+					<p>
+						Ik heb deze opdracht geselecteerd voor mijn portfolio, voornamelijk omdat het een andere manier
+						van ontwikkelen is met een andere manier van denken, maar dat het daarom niet minderwaardig
+						ingeschat moet worden dan bijvoorbeeld een backend-project in Java. Het was zeer interessant en
+						leerrijk om mij hier eens in verdiept te hebben.
+					</p>
 				</div>
 				<div id="munit">
 					<h2>MUnit</h2>
