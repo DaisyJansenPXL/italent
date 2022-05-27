@@ -156,6 +156,49 @@
 						</div>
 					</div>
 
+					<div class="row widget">
+						<div class="col-xs-12">
+							<h4>MUnit</h4>
+							<img id="12" class="fullscreen-img" src="assets/images/munit-towns-xapi.png" alt="MUnit towns-xapi" onclick="toggleFullscreen(this)">
+							<p>MUnit towns-xapi</p>
+						</div>
+					</div>
+
+					<div class="row widget">
+						<div class="col-xs-12">
+							<img id="13" class="fullscreen-img" src="assets/images/munit-towns-papi-happy-flow.png" alt="MUnit towns-papi email sent" onclick="toggleFullscreen(this)">
+							<p>MUnit towns-papi met verzenden e-mail</p>
+						</div>
+					</div>
+
+					<div class="row widget">
+						<div class="col-xs-12">
+							<img id="14" class="fullscreen-img" src="assets/images/munit-towns-papi-no-mail-sent.png" alt="MUnit towns-papi no email sent" onclick="toggleFullscreen(this)">
+							<p>MUnit towns-papi zonder verzenden e-mail</p>
+						</div>
+					</div>
+
+					<div class="row widget">
+						<div class="col-xs-12">
+							<img id="15" class="fullscreen-img" src="assets/images/munit-towns-sapi.png" alt="MUnit towns-sapi" onclick="toggleFullscreen(this)">
+							<p>MUnit towns-sapi</p>
+						</div>
+					</div>
+
+					<div class="row widget">
+						<div class="col-xs-12">
+							<img id="16" class="fullscreen-img" src="assets/images/munit-evi-sapi.png" alt="MUnit ev-sapi" onclick="toggleFullscreen(this)">
+							<p>MUnit ev-sapi</p>
+						</div>
+					</div>
+
+					<div class="row widget">
+						<div class="col-xs-12">
+							<img id="17" class="fullscreen-img" src="assets/images/munit-smtp-sapi.png" alt="MUnit smtp-sapi" onclick="toggleFullscreen(this)">
+							<p>MUnit smtp-sapi</p>
+						</div>
+					</div>
+
 			</div>
 
 			</aside>			<!-- /Sidebar -->
@@ -410,9 +453,91 @@
 				</div>
 				<div id="munit">
 					<h2>MUnit</h2>
-					<p></p>
+					<p>
+						Ik heb niet volgens de TDD-manier gewerkt, maar toch wilde ik ook graag de code testen, of er
+						geen foutje in geslopen was. Ook hier heb ik van boven (experience) naar onder (system) gewerkt.
+					</p>
+					<p>
+						De unittesten binnen het Mule-project worden opgesteld met MUnit. Bij een unittest zijn telkens
+						drie velden aanwezig voor de flow in de test: behavior, execution en validation.
+					</p>
+					<p>
+						Ik begon dus met de unittest van towns-xapi. In de towns-xapi wordt de payload gemapt en
+						vervolgens meegegeven met het request naar de towns-papi. De request naar de towns-papi heb ik
+						in een mock gestoken, met vervolgens daar een spy op. In deze spy heb ik eerst nog een variabele
+						aangemaakt met de payload die meegegeven zou moeten worden. Vervolgens vergelijk ik de effectief
+						meegegeven payload met de variabele of deze overeenkomen. De flow-ref bij de execution was reeds
+						aanwezig, dat is de request dat naar deze api komt. Daarvoor heb ik een transform-message
+						geplaatst, waarin ik representatieve data heb gestoken die binnen zou kunnen komen in de
+						towns-xapi. Vervolgens valideer ik nog even of de towns-papi (die ik gemockt heb) exact een keer
+						aangeroepen wordt.
+					</p>
+					<p>
+						De unittesten van de towns-papi zijn veel meer uitgebreid en moeilijker om effectief alles
+						getest te krijgen. Hier heb ik dan ook twee flows aangemaakt: de happy flow waar alles getest
+						wordt, en de flow waar er geen e-mail verzonden wordt. Omdat hier drie verschillende API’s
+						aangesproken worden in de happy flow vanuit de towns-papi, worden deze alledrie ook gemockt. Ook
+						check ik voor elke call naar elke API of de juiste payload wordt doorgegeven. Bij execution heb
+						ik ook hier, net zoals bij de towns-xapi een representatieve payload gezet die binnenkomt bij
+						towns-papi. Vervolgens heb ik bij de Validation-step gekeken of de gemockte methodes het juiste
+						aantal keer aangeroepen werden (get charging points meermaals omdat er meerdere gemeenten
+						aanwezig waren), gezorgd dat de ordening van de gemeenten in orde is (het hoogst mogelijke
+						bedrag bovenaan op de eerste plaats) en of het resultaat dat terug naar de towns-xapi wordt
+						gegeven correct is. Dan heb ik vervolgens nog een flow gemaakt waarbij in het formulier niet
+						aangeduid werd om een mail te ontvangen, waardoor er ook effectief geen mail verstuurd mag
+						worden.
+					</p>
+					<p>
+						In de towns-sapi was het weer iets simpeler omdat ik moest testen of de database eenmaal
+						aangeroepen werd en of de payload die teruggegeven werd naar de towns-papi overeenkomt met wat
+						het echt zou moeten zijn.
+					</p>
+					<p>
+						Bij de ev-sapi moest ik twee zaken mocken, namelijk de call naar de externe api om de
+						coördinaten op te kunnen vragen, en de call naar de database die met de ontvangen coördinaten
+						het aantal oplaadpunten kan teruggeven van de gemeente met die coördinaten. Hierbij heb ik ook
+						een event aangemaakt waarbij ik representatieve query parameters invul die zouden binnengekomen
+						kunnen zijn in de ev-sapi, waarna ik ging valideren of de externe api en de database exact
+						eenmaal aangeroepen zijn en of de payload naar de towns-papi correct was.
+					</p>
+					<p>
+						Bij de unittesten van smtp-sapi heb ik gemockt dat de e-mail verstuurd werd, met daarop een spy
+						om te kijken alvorens de call gebeurt of de payload gelijk is aan de payload die ik had
+						opgesteld, namelijk de CSV-data. Ook kijk ik na of de e-mail eenmaal verzonden geworden geweest
+						zou zijn en of de response van de payload gelijk is aan “Mail sent successfully” om te kijken of
+						het verzenden van de mail gelukt is.
+					</p>
 					<h3>Reflectie</h3>
-					<p></p>
+					<p>
+						Ik ben altijd wat minder goed geweest in het mocken van objecten in Java, maar omdat alles hier
+						zo klein opgesplitst was (en omdat dit waarschijnlijk nog geen uitgebreide applicatie is),
+						verliep het relatief vlot. De afgebakende onderdeeltjes hielpen mij goed om bepaalde zaken,
+						zoals het mocken, te begrijpen.
+					</p>
+					<p>
+						Hetgeen echt niet vlot ging, waren de unittesten van de process-API. Hier was enorm veel
+						aanwezig, er moesten veel zaken gemockt worden, er moest meerdere malen een spy toegevoegd
+						worden, en in de validatie kwamen ook relatief veel zaken terug.
+					</p>
+					<p>
+						Het heeft ook een tijdje geduurd voor ik door had dat ik ook effectief data moest ingeven die
+						effectief binnengekomen zou kunnen zijn, zodat de test daarmee verder kan. Klinkt uiteraard heel
+						logisch, maar toch was het even zoeken voor mij.
+					</p>
+					<p>
+						De link met de opleiding is hier heel duidelijk: namelijk dat testen enorm belangrijk is. Er
+						wordt regelmatig gesproken van TDD (Test Driven Development), maar dat heb ik hier niet
+						toegepast. Ik wilde eerst wegwijs raken met de IDE en de technologie, en de testen heb ik als
+						laatste geschreven als controle.
+					</p>
+					<p>
+						Ik heb dan ook voor MUnit gekozen omdat ik vind dat testen niet mag ontbreken, zeker niet in een
+						integratieproject. Het is zeer belangrijk om er zeker van te zijn dat je de data die in en uit
+						de applicatie gaat goed mapt en gebruikt, omdat andere applicaties hier afhankelijk van zijn.
+						Hier komt dan natuurlijk ook de link naar de API-specificaties weer naar boven: ik heb gebruik
+						gemaakt van de voorbeelden uit de contracten om mee te geven als beginwaarden, en kijk dan of de
+						uitkomsten zijn wat ik verwacht dat ze zouden moeten zijn.
+					</p>
 				</div>
 
 
