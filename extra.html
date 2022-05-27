@@ -4,18 +4,17 @@
 	<meta charset="utf-8">
 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
-	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
 
-	<title>Extra | iTalent - Daisy Jansen</title>
+	<title>Extra's | iTalent - Daisy Jansen</title>
 
 	<link rel="shortcut icon" href="assets/images/logo_pxl_bol.png">
-	
+
 	<!-- Bootstrap -->
-	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+	<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
 	<!-- Icon font -->
-	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 	<!-- Fonts -->
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
 	<!-- Custom styles -->
 	<link rel="stylesheet" href="assets/css/styles.css">
 
@@ -27,7 +26,7 @@
 	<div id="head" class="parallax" parallax-speed="2">
 		<h1 id="logo" class="text-center">
 			<img class="img-circle" src="assets/images/image-2021-03-24-133826.jpeg" alt="">
-			<span class="title">Portfolio</span>
+			<span class="title">Extra's</span>
 			<span class="tagline">iTalent<br>
 				<a href="">Daisy Jansen</a></span>
 		</h1>
@@ -51,7 +50,7 @@
 							<li><a href="planning.html">Plannen van activiteiten</a></li>
 							<li><a href="react.html">React-formulier</a></li>
 							<li><a href="mule.html">Mule-project</a></li>
-							<li><a href="react.html">Extra's</a></li>
+							<li><a href="extra.html">Extra's</a></li>
 						</ul>
 					</li>
 					<li><a href="blog.html">Eindreflectie</a></li>
@@ -67,27 +66,37 @@
 	<div class="container">
 
 		<div class="row topspace">
-			
+
 			<!-- Sidebar -->
 			<aside class="col-md-4 sidebar sidebar-left">
 
 				<div class="row widget">
 					<div class="col-xs-12">
-						<h4>Lorem ipsum dolor sit</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, ratione delectus reiciendis nulla nisi pariatur molestias animi eos repellat? Vel.</p>
+						<h4>Afbeeldingen</h4>
+						<p>Klik op onderstaande afbeeldingen om deze in fullscreen te kunnen bekijken.</p>
 					</div>
 				</div>
 				<div class="row widget">
 					<div class="col-xs-12">
-						<h4>Lorem ipsum dolor sit</h4>
-						<p><img src="assets/images/s1.jpg" alt=""></p>
+						<h4>Portainer</h4>
+						<img id="1" class="fullscreen-img" src="assets/images/Portainer.png" alt="Portainer" onclick="toggleFullscreen(this)">
+						<p>Portainer GUI</p>
 					</div>
 				</div>
+
+                <div class="row widget">
+                    <div class="col-xs-12">
+                        <h4>Databases</h4>
+                        <img id="2" class="fullscreen-img" src="assets/images/Databases.png" alt="Databases" onclick="toggleFullscreen(this)">
+                        <p>Databases in DBeaver met de oorspronkelijke scripts om ze aan te maken</p>
+                    </div>
+                </div>
+
 				<div class="row widget">
 					<div class="col-xs-12">
-						<h4>Lorem ipsum dolor sit</h4>
-						<p><img src="assets/images/s1.jpg" alt=""></p>
-						<p>Qui, debitis, ad, neque reprehenderit laborum soluta dolor voluptate eligendi enim consequuntur eveniet recusandae rerum? Atque eos corporis provident tenetur.</p>
+						<h4>GitHub Pages</h4>
+						<img id="3" class="fullscreen-img" src="assets/images/Github-pages.png" alt="GitHub Pages" onclick="toggleFullscreen(this)">
+						<p>GitHub Pages instellingen</p>
 					</div>
 				</div>
 
@@ -96,97 +105,93 @@
 			<!-- Article main content -->
 			<article class="col-sm-8 maincontent">
 				<header class="page-header">
-					<h1 class="page-title">Lorem ipsum dolor sit amet, consectetur.</h1>
+					<h1 class="page-title">Extra's</h1>
 				</header>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, consequuntur eius repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat consectetur quam aliquam beatae soluta accusantium iusto nihil nesciunt unde veniam magnam repudiandae sapiente.</p>
-				<h3>Necessitatibus</h3>
-				<p>Velit, odit, eius, libero unde impedit quaerat dolorem assumenda alias consequuntur optio quae maiores ratione tempore sit aliquid architecto eligendi pariatur ab soluta doloremque dicta aspernatur labore quibusdam dolore corrupti quod inventore. Maiores, repellat, consequuntur eius repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat consectetur quam aliquam!</p>
-				<blockquote>Velit, odit, eius, libero unde impedit quaerat dolorem assumenda alias consequuntur optio quae maiores ratione tempore sit aliquid architecto eligendi pariatur ab soluta doloremque dicta aspernatur labore quibusdam dolore corrupti quod inventore. Maiores, repellat, consequuntur eius repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat consectetur quam aliquam!</blockquote>
-				<p>Velit, odit, eius, libero unde impedit quaerat dolorem assumenda alias consequuntur optio quae maiores ratione tempore sit aliquid architecto eligendi pariatur ab soluta doloremque dicta aspernatur labore quibusdam dolore corrupti quod inventore. Maiores, repellat, consequuntur eius repellendus eos aliquid molestiae ea laborum ex quibusdam laudantium voluptates placeat consectetur quam aliquam!</p>
-				<h3>Fugit, laboriosam</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea a reiciendis vitae provident atque accusamus nam repudiandae accusantium perspiciatis consectetur. Ad, est, deleniti quis iusto labore iste totam cum maiores accusantium nobis error inventore explicabo laboriosam temporibus in rem nemo?</p>
-				<ul>
-					<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus!</li>
-					<li>Laboriosam, aliquam totam asperiores nam velit voluptatum non quidem.</li>
-					<li>Voluptatem, libero quia voluptatum ab modi facere dolore assumenda?</li>
-					<li>Expedita, officia tenetur doloremque nulla temporibus ab voluptates adipisci.</li>
-					<li>Nostrum, nesciunt, inventore amet temporibus officia perferendis doloremque nulla.</li>
-					<li>Dolorum, ex earum maiores perspiciatis modi sequi odit mollitia.</li>
-				</ul>
-				<p>Eum, quasi, est, vitae, ipsam nobis consectetur ea aspernatur ad eos voluptatibus fugiat nisi perferendis impedit. Quam, nulla, excepturi, voluptate minus illo tenetur sint ab in culpa cumque impedit quibusdam. Saepe, molestias quia voluptatem natus velit fugiat omnis rem eos sapiente quasi quaerat aspernatur quisquam deleniti accusantium laboriosam odio id?</p>
+				<p>
+					Tijdens het ontwikkelen van de Mule-applicatie en het portfolio, ben ik nog in aanraking gekomen met
+					een aantal nieuwe technologieën die ik toch ook nog het vermelden waard vond. Deze tellen niet mee
+					voor de hoofdopdracht en zijn ook niet groot genoeg om als volledige technologie mee te kunnen
+					tellen, maar ik wilde deze toch ook nog even licht aanraken in mijn portfolio.
+				</p>
+                <h2>PostgreSQL en Portainer</h2>
+                <p>
+                    Voor mijn databases heb ik gebruik gemaakt van Docker-containers om deze in te doen draaien. Dit
+                    zijn PostgreSQL-databases, wat ook een nieuw technologie is waarmee ik nog niet bekend was. Ik heb
+                    Portainer in een Docker-container opgezet (en ook een Docker volume) en vervolgens via de Portainer
+                    GUI heb ik twee databases aangemaakt. Hier kon ik zeer eenvoudig gegevens zoals de naam van de
+                    database, de gebruiker en het wachtwoord instellen.
+                </p>
+                <p>
+                    Vervolgens maakte ik via DBeaver connectie met de databases en gaf ik via een script gegevens in,
+                    in de database. De syntax lijkt enorm hard op SQL, of toch wat ik nodig had. Ik heb geen
+                    gebruik gemaakt van joins of iets anders advanced.
+                </p>
+                <h3>Reflectie</h3>
+                <p>Wanneer ik besloten had enkele databases te voorzien, had ik besloten om ook hier maar eens naar
+                    enkele nieuwe technologieën te kijken. Portainer had ik al eens van gehoord, maar tot nu toe nog
+                    nooit gebruikt. Dit vond ik dus het ideale moment.
+                </p>
+                <p>
+                    Ook PostgreSQL heb ik al vaker gehoord maar nog nooit gebruikt. Voor zo een klein project vond ik
+                    dat ideaal om eens iets nieuws uit te proberen.
+                </p>
+                <p>
+                    Ik moet toegeven dat ik dit niet extreem moeilijk vond. Tegenwoordig zijn er heel wat Docker images
+                    beschikbaar en is installeren gebeurd met slechts enkele commando’s. Ook het opzetten via Portainer
+                    was heel eenvoudig. Ik heb dus geen problemen ondervonden.
+                </p>
+                <p>
+                    Ik heb besloten deze technologieën ook nog even te vermelden in het portfolio omdat deze toch ook
+                    deel hebben uitgemaakt van het gehele plaatje.
+                </p>
+				<h2>GitHub Pages</h2>
+				<p>
+					Bij het aanmaken van GitHub Pages heb ik geen problemen ondervonden. In het begin was het mij niet
+					duidelijk dat de website achterliggend opnieuw gebuild moest worden, waardoor mijn wijzigingen niet
+					onmiddellijk zichtbaar zijn op de website. Daarbuiten ben ik niets abnormaals of moeilijks
+					tegengekomen, GitHub Pages werkt enorm gemakkelijk.
+				</p>
+				<p>
+					Ik vond de manier van werken enorm gemakkelijk. Iemand met basiskennis van Git, HTML en CSS kan op
+					deze manier heel gemakkelijk en gratis een website maken en hosten. Uitgebreide kennis is absoluut
+					niet nodig.
+				</p>
+				<p>
+					In de opleiding hebben we regelmatig gewerkt met Git en GitHub, en om dat te combineren met het
+					effectief hosten van een website zonder extra werk, vond ik enorm verrassend en leuk om te
+					ontdekken. Ik word enorm blij van simpele dingen die werken zoals ze moeten werken, zonder addertjes
+					onder het gras. Ik had in het begin wat schrik omdat ik nog niet echt ervaring had met het hosten
+					van gratis websites. Ik had verwacht dat dit een heel gedoe ging worden met veel opzoekwerk, maar
+					dat bleek dus allesbehalve.
+				</p>
+				<p>
+					Ik heb deze opdracht gekozen om in het portfolio te steken, omdat ik enorm verrast ben dat ik heb
+					bijgeleerd dat het hosten van een gratis website zo gemakkelijk kan zijn.
+				</p>
 			</article>
 			<!-- /Article -->
-			
+
 
 		</div>
 	</div>	<!-- /container -->
-	
+
 </main>
-
-<footer id="footer" class="topspace">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-3 widget">
-				<h3 class="widget-title">Contact</h3>
-				<div class="widget-body">
-					<p>+234 23 9873237<br>
-						<a href="mailto:#">some.email@somewhere.com</a><br>
-						<br>
-						234 Hidden Pond Road, Ashland City, TN 37015
-					</p>	
-				</div>
-			</div>
-
-			<div class="col-md-3 widget">
-				<h3 class="widget-title">Follow me</h3>
-				<div class="widget-body">
-					<p class="follow-me-icons">
-						<a href=""><i class="fa fa-twitter fa-2"></i></a>
-						<a href=""><i class="fa fa-dribbble fa-2"></i></a>
-						<a href=""><i class="fa fa-github fa-2"></i></a>
-						<a href=""><i class="fa fa-facebook fa-2"></i></a>
-					</p>
-				</div>
-			</div>
-
-			<div class="col-md-3 widget">
-				<h3 class="widget-title">Text widget</h3>
-				<div class="widget-body">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, nihil natus explicabo ipsum quia iste aliquid repellat eveniet velit ipsa sunt libero sed aperiam id soluta officia asperiores adipisci maxime!</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, nihil natus explicabo ipsum quia iste aliquid repellat eveniet velit ipsa sunt libero sed aperiam id soluta officia asperiores adipisci maxime!</p>
-				</div>
-			</div>
-
-			<div class="col-md-3 widget">
-				<h3 class="widget-title">Form widget</h3>
-				<div class="widget-body">
-					<p>+234 23 9873237<br>
-						<a href="mailto:#">some.email@somewhere.com</a><br>
-						<br>
-						234 Hidden Pond Road, Ashland City, TN 37015
-					</p>	
-				</div>
-			</div>
-
-		</div> <!-- /row of widgets -->
-	</div>
-</footer>
 
 <footer id="underfooter">
 	<div class="container">
 		<div class="row">
-			
+
 			<div class="col-md-6 widget">
 				<div class="widget-body">
-					<p>234 Hidden Pond Road, Ashland City, TN 37015 </p>
+					<p></p>
 				</div>
 			</div>
 
 			<div class="col-md-6 widget">
 				<div class="widget-body">
 					<p class="text-right">
-						Copyright &copy; 2014, Your awesome name here<br> 
-						Design: <a href="http://www.gettemplate.com" rel="designer">Initio by GetTemplate</a> </p>
+						Copyright &copy; 2021-2022, Daisy Jansen<br>
+					</p>
 				</div>
 			</div>
 
@@ -196,9 +201,11 @@
 
 
 
+
+
 <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="assets/js/template.js"></script>
 </body>
 </html>
