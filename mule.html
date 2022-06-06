@@ -208,16 +208,16 @@
 				<header class="page-header">
 					<h1 class="page-title">Mule-applicatie</h1>
 					<p>Zie hieronder een kleine demo. Via het formulier worden gegevens ingevuld. Deze worden doorgestuurd
-					naar de Mule-applicatie en gaat gegevens teruggeven die afkomstig zijn van andere api's. Via de
-					resultaten-pagina krijgen we de gemeenten te zien, via mail krijgen we nog extra informatie toegestuurd
+					naar de Mule-applicatie en gaat gegevens teruggeven die afkomstig zijn van andere API's. Via de
+					resultatenpagina krijgen we de gemeenten te zien, via mail krijgen we nog extra informatie toegestuurd
 					via een CSV-bestand.</p>
 					<div style="padding:54.17% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/714404300?h=a4b7896e5b&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Gemeente wijzer - Google Chrome 2022-05-26 22-05-37"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 				</header>
 				<h2>Cursus</h2>
 				<p>
-					Alvorens ik aan de slag ging met de Mule-applicatie, heb ik de Getting-started cursus gevolgd via
+					Alvorens ik aan de slag ging met de Mule-applicatie, heb ik de "Getting Started"-cursus gevolgd via
 					het trainingsplatform van Mulesoft omdat dit een compleet nieuwe technologie is, waarmee ik nog niet
-					in aanraking mee ben gekomen. Inclusief oefeningen maken, heb ik er 15 uur over gedaan om de
+					in aanraking ben gekomen. Inclusief oefeningen maken, heb ik er 15 uur over gedaan om de
 					cursus af te ronden. Wat ik minder aangenaam vond aan de cursus, is dat de theorie bestond uit
 					allemaal losse video's zonder tekst die ik nadien nog eens rustig zou kunnen lezen. Als ik iets
 					wilde herhalen, moest ik dus de video opnieuw bekijken.
@@ -240,16 +240,15 @@
 						Hierdoor moest ik goed nadenken over hoe ik de architectuur van de applicatie moest opstellen.
 					</p>
 					<p>
-						Een aantal zaken waren heel gemakkelijk: ik zou maar 1 client hebben die data doorgeeft, en dat is
-						het formulier dat ik gemaakt heb in React. Maar dan moest ik beginnen nadenken en opzoeken waar ik
-						data vandaan zou halen. Het leek mij ook heel leuk om te zien per gemeente waar oplaadpalen voor
-						auto’s ter beschikking zouden zijn omdat zowel mijn vriend als ik een laadpaal nodig hebben voor
-						onze auto’s, dus dat ik heb ook nog als extra dataset erbij genomen. Ik ben op zoek gegaan naar
-						gratis API’s, zodat ik niet enkel met eigen data, maar ook met externe data zou werken die van een
-						externe API afkomstig is. Uiteindelijk viel de beslissing dat ik 2 databases zelf ging voorzien,
-						namelijk de towns-database en de EV-database. Ik had wel een database gevonden die op basis van de
-						meegegeven naam de juiste coördinaten teruggeeft, wat ik dan weer kan gebruiken om te gebruiken om
-						data uit de EV-database op te halen.
+						Ik heb 1 client die data doorgeeft, en dat is het formulier dat ik gemaakt heb in React. Maar
+						dan moest ik beginnen nadenken en opzoeken waar ik data vandaan zou halen. Het leek mij ook heel
+						leuk om te zien per gemeente waar laadpalen voor auto’s ter beschikking zouden zijn omdat zowel
+						mijn vriend als ik een laadpaal nodig hebben voor onze auto’s, dus dat ik heb ook nog als extra
+						dataset erbij genomen. Ik ben op zoek gegaan naar gratis API’s, zodat ik niet enkel met eigen
+						data, maar ook met externe data zou werken die van een externe API afkomstig is. Uiteindelijk
+						viel de beslissing dat ik 2 databases zelf ging voorzien, namelijk de towns-database en de
+						EV-database. Ik had wel een database gevonden die op basis van de meegegeven naam de juiste
+						coördinaten teruggeeft, wat ik dan weer kan gebruiken om data uit de EV-database op te halen.
 					</p>
 					<p>
 						Vervolgens leek het mij ook heel leuk als ik een e-mail zou kunnen uitsturen met de gegevens die
@@ -272,7 +271,7 @@
 						het zo overzichtelijk mogelijk te maken. Een datatype heeft properties die meermaals gebruikt kunnen
 						worden, en een example is een uitgewerkt voorbeeld van bijvoorbeeld zo een datatype. Elke endpoint
 						moest op voorhand uitgeschreven worden met de juiste parameters, responses, body… Omdat dit de basis
-						zal zijn van de volledige Mule-applicatie. Binnen deze tool kon de uitgeschreven endpoint(s) ook al
+						zal zijn van de volledige Mule-applicatie. Binnen deze tool kon de uitgeschreven endpoint ook al
 						onmiddellijk getest worden binnen hetzelfde venster, zodat je onmiddellijk kon bijsturen indien er
 						een fout gemaakt is.
 					</p>
@@ -336,7 +335,7 @@
 					<p>
 						Ik ben begonnen met een transform message toe te voegen, die de payload moet omvormen. Dat
 						omvormen gebeurt met DataWeave. Omdat de omvorming goed moet gebeuren en er geen fouten in mogen
-						sluipen, heb ik gewerkt met de <a href="https://developer.mulesoft.com/learn/dataweave/" target="_blank">
+						sluipen, heb ik gewerkt met <a href="https://developer.mulesoft.com/learn/dataweave/" target="_blank">
 						DataWeave Playground</a>. Dit is een online platform waar je je input kan ingeven, vervolgens je
 						script in DataWeave uitschrijven en kijken wat je als output krijgt. Deze tool heb ik enorm veel
 						gebruikt. Vervolgens heb ik een request toegevoegd die met de gemapte data de volgende api gaan
@@ -344,7 +343,7 @@
 					</p>
 					<p>
 						Bij het aanmaken van de towns-papi heb ik ook gevonden hoe ik de host en de port moet instellen
-						van de api, dus dat heb ik ook even in orde gemaakt bij de towns-xapi. De towns-papi is de
+						van de API, dus dat heb ik ook even in orde gemaakt bij de towns-xapi. De towns-papi is de
 						grootste API, omdat hier het meeste logica in zit. De payload die binnenkwam heb ik opgevangen
 						en verschillende zaken opgeslagen in variabelen. Binnen Mule-applicaties wordt gewerkt met flows,
 						en binnen de towns-papi werk ik met verschillende requesten, die niet allemaal gegevens nodig

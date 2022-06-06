@@ -149,7 +149,7 @@
 					Met de data die wordt ingegeven in het formulier, moet ook iets gebeuren, namelijk verstuurd worden
 					naar de Mule-applicatie zodat dat verder afgehandeld kan worden. Wanneer er op de submit-knop
 					geklikt wordt, wordt er eerst gevalideerd of er iets is ingevuld in alle verplichte velden, en of de
-					ingevulde waarden correct zijn. Vervolgens steek ik de waarden ik een data-object, dat ik meegeef
+					ingevulde waarden correct zijn. Vervolgens steek ik de waarden in een data-object, dat ik meegeef
 					via een POST-request naar mijn Mule-applicatie. Het POST-request stuurt ook een resultaat terug, wat
 					ik vervolgens heb opgeslagen in de session storage. Zo blijft de data de hele sessie opgeslagen,
 					maar zodra de sessie beëindigd is, zal deze data ook verwijderd worden.
@@ -157,12 +157,11 @@
 				<p>
 					Als ik de status 200 terugkrijg, zorg ik er ook voor dat ik naar de view van de resultaten geleid
 					wordt. Dit doe ik met de navigate-hook van React Router. Op deze manier zorg ik ervoor dat de state
-					van componenten bewaard blijft. In deze POC heeft dat niet heel veel meerwaarde, omdat ik in de view
-					van de resultaten data binnenkrijg van de Mule-applicatie en niet uit de React-app, maar ik wilde er
-					toch een best practice van maken door toch gebruik te maken van de Router.
+					van componenten bewaard blijft. In deze POC heeft dat niet heel veel meerwaarde, omdat ik geen
+					gebruik maak van Redux.
 				</p>
 				<p>
-					Het resultaten-scherm heb ik heel eenvoudig gehouden. Ik haal de data uit de session storage op en
+					Het resultatenscherm heb ik heel eenvoudig gehouden. Ik haal de data uit de session storage op en
 					toon vervolgens de namen van de steden op het scherm. Voor gedetailleerde informatie van de steden,
 					heb ik gebruik gemaakt van een e-mailfunctionaliteit, waarover later meer.
 				</p>
@@ -178,9 +177,8 @@
 					wilde gebruiken om mijn kennis wat uit te breiden.
 				</p>
 				<p>
-					Ik heb bewust geen tijd gestoken in het extra stijlen van het formulier, omdat er al vrij veel tijd
-					stak in de Mule-applicatie. Ik heb mij hier volledig gefocust op het praktische, en minder op het
-					esthetische.
+					Ik heb bewust geen tijd gestoken in het extra stijlen van het formulier. Ik heb mij hier volledig
+					gefocust op het praktische, en minder op het esthetische.
 				</p>
 				<p>
 					Mijn sterke punten waren dat ik vrij vlot weg was met de technologie. Dit kwam voornamelijk door al
